@@ -4,7 +4,8 @@ import wikipedia
 import webbrowser
 import pywhatkit
 import pyjokes
-
+import os
+from github import git_add_all, git_commit, git_push
 
 
 engine = pyttsx3.init()
@@ -62,4 +63,14 @@ if __name__ == "__main__":
             pywhatkit.playonyt(song)
         elif 'joke' in query:
             speak(pyjokes.get_joke())
-            
+        elif 'goodbye' in query:
+            speak("See you again")
+            break
+        elif 'files' in query:
+            os.system('cmd /c "ls"')
+        elif 'add' in query:
+            git_add_all()
+        elif 'commit' in query:
+            git_commit()
+        elif 'push' in query:
+            git_push()
