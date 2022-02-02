@@ -7,11 +7,15 @@ import pyjokes
 import os
 from github import git_add_all, git_commit, git_push
 
-
+'''
+Initializing engine and voices.
+'''
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
 
+
+#function that make alexa speak
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
@@ -72,5 +76,7 @@ if __name__ == "__main__":
             git_add_all()
         elif 'commit' in query:
             git_commit()
-        elif 'push' in query:
+        elif 'finish' in query:
             git_push()
+        elif 'shutdown' in query:
+            os.system('cmd /c shutdown')
