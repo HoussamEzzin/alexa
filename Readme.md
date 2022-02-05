@@ -11,4 +11,5 @@ Everyone could build his own alexa with python
 - add sending emails
 - Open any website
 - Execute any cmd commad
+- Voice chatbot exchange ( Chatterbot + a lot of work)
 
